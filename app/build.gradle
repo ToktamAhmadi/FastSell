@@ -1,0 +1,108 @@
+apply plugin: 'com.android.application'
+
+android {
+
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
+    useLibrary 'org.apache.http.legacy'
+    dataBinding {
+        enabled = true
+    }
+    defaultConfig {
+        applicationId "com.example.toktam.myapplication"
+        minSdkVersion 17
+        //noinspection OldTargetApi
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/ASL2.0'
+    }
+    lintOptions {
+        abortOnError false
+    }
+    allprojects {
+        tasks.withType(JavaCompile) {
+            options.compilerArgs << "-Xlint:deprecation"
+
+        }
+
+    }
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+    defaultConfig {
+        multiDexEnabled true
+    }
+    productFlavors {
+    }
+
+}
+
+configurations {
+    all {
+        exclude module: 'httpclient'
+        exclude module: 'commons-logging'
+    }
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.android.support:cardview-v7:28.0.0'
+    implementation 'com.android.support:support-v4:28.0.0'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation 'com.google.android.gms:play-services-gcm:15.0.1'
+    implementation 'com.google.android.gms:play-services-location:15.0.1'
+    testImplementation 'junit:junit:4.12'
+    implementation 'org.jsoup:jsoup:1.10.2'
+    implementation 'com.theartofdev.edmodo:android-image-cropper:2.3.1'
+    implementation 'com.nineoldandroids:library:2.4.0'
+    implementation 'com.daimajia.slider:library:1.1.5@aar'
+    implementation 'jp.wasabeef:recyclerview-animators:2.2.7'
+    implementation 'com.mxn.soul:flowingdrawer-core:2.0.0'
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
+    //implementation 'com.github.Yalantis:GuillotineMenu-Android:1.2'
+    implementation 'com.sackcentury:shinebutton:0.2.0'
+    implementation 'com.getkeepsafe.taptargetview:taptargetview:1.10.0'
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+    implementation 'com.android.volley:volley:1.0.0'
+    //implementation 'com.github.florent37:materialtextfield:1.0.7'
+    // implementation 'com.uncopt:android.justified:1.0'
+    // implementation 'com.uncopt:android.justified:1.0'
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
+    // Glide v4 uses this new annotation processor -- see https://bumptech.github.io/glide/doc/generatedapi.html
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
+    implementation 'com.daimajia.slider:library:1.1.5@aar'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation 'com.theartofdev.edmodo:android-image-cropper:2.3.+'
+    implementation 'com.nineoldandroids:library:2.4.0'
+    implementation 'com.daimajia.slider:library:1.1.5@aar'
+    implementation 'org.apache.httpcomponents:httpclient:4.5'
+    implementation 'org.apache.httpcomponents:httpcore:4.4.1'
+    implementation 'com.ss.bannerslider:bannerslider:2.0.0'
+    implementation 'com.valdesekamdem.library:md-toast:0.9.0'
+    //implementation 'ir.huri:JalaliCalendar:1.3.3'
+}

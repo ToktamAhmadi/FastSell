@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginTop="?android:attr/actionBarSize"
+
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+<!--************************************************-->
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            >
+
+            <TextView
+                android:id="@+id/category_filter"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:text=" همه گروه ها "
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="17dp"
+                android:padding="10dp"
+                android:layout_gravity="center"
+
+                />
+            <TextView
+                android:id="@+id/location_filter"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:text=" همه  ایران"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:textSize="17dp"
+                android:padding="10dp"
+                />
+
+        </LinearLayout>
+
+        <!--*****************************************-->
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+  <!--*******************************************************-->
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_ads"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+            <!--*****************************************-->
+
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+    </LinearLayout>
+    <!--*****************************************-->
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|left"
+        android:layout_margin="30dp"
+        android:src="@android:drawable/ic_input_add"
+        android:onClick="floatingNewAd_setOnClickListener"
+         />
+
+    <TextView
+        android:id="@+id/not_found"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|center"
+        android:gravity="center"
+        android:padding="20dp"
+        android:text="اطلاعاتی برای نمایش وجود ندارد ."
+        android:textColor="#000000"
+        android:textSize="22dp"
+        android:visibility="gone"
+        />
+
+    </android.support.design.widget.CoordinatorLayout>

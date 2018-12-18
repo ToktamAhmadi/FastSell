@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="?android:attr/actionBarSize"
+
+    >
+
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swip_bookmark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+         >
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_bookmark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        </android.support.v7.widget.RecyclerView>
+    </android.support.v4.widget.SwipeRefreshLayout>
+    <TextView
+        android:id="@+id/not_found_bookmark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|center"
+        android:gravity="center"
+        android:padding="20dp"
+        android:text="اطلاعاتی برای نمایش وجود ندارد ."
+        android:textColor="#000000"
+        android:textSize="22dp"
+        android:visibility="gone"
+        />
+
+
+</RelativeLayout>
